@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700;800&family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Bodoni Moda", "Playfair Display", ui-serif, Georgia, serif;
+  --font-heading: "Raleway", sans-serif;
+  
+  --color-brand-light: #F2F2F2;
+  --color-brand-gray: #E8E8E8;
+  --color-brand-medium: #A0A0A0;
+  --color-brand-deep: #4A4A4A;
+  --color-brand-dark: #333333;
+  --color-brand-silver: #D1D1D1;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-dark selection:text-white;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif leading-tight;
+  }
+}
+
+.editorial-label {
+  @apply text-[10px] uppercase tracking-[0.3em] font-bold text-brand-medium;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.content-container {
+  @apply bg-white rounded-[2rem] shadow-sm border border-brand-gray p-8 md:p-12;
+}
+
+.btn-editorial {
+  @apply px-8 py-3 rounded-full border border-brand-gray text-[10px] uppercase tracking-widest font-bold transition-all hover:bg-brand-dark hover:text-white hover:border-brand-dark cursor-pointer;
+}
